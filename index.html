@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap</title>
+    <!-- link para font-awesome y bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"/>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  </head>
+
+  <body>
+    <!-- este es el div principal -->
+    <div class="container-fluid p-0">
+
+      <!-- esta sera la primera linea de menu -->
+
+      <div class="d-flex align-items-center gap-1 p-3 bg-light">
+
+          <i class="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+
+          <!-- boton que abre el modal -->
+
+          <button type="button" class="btn btn-success ms-auto" data-bs-toggle="modal" data-bs-target="#miModal" >
+          Create a new post
+           </button>
+
+          <!--boton de setting  -->
+          <div class="btn-group" role="group">
+            <button
+              type="button"
+              class="btn btn-secondary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+
+              <i class="fa-solid fa-gear"></i>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Accesibility</a></li>
+              <li><a class="dropdown-item" href="#">Privacy and data</a></li>
+              <li> <hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+            </ul>
+          </div>
+          
+      </div>
+     
+
+<!-- MODAL -->
+<div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" id="tituloModal">Create a new post</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body">
+        <p class="m-0">Caption:</p>
+        <input type="text" class="form-control pb-3"  placeholder="Add your caption post here...">
+
+        <i class="fa-solid fa-camera border border-dark p-2 rounded mt-2"></i>
+        <i class="fa-solid fa-location-dot border border-dark p-2 rounded mt-2"></i>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success">Publish</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- final de modal -->
+
+
+<!-- botones para imagenes en columna y laterales-->
+
+ <ul class="nav nav-tabs justify-content-center mb-3" id="galleryTabs" role="tablist"> 
+
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="grid-tab" data-bs-toggle="tab" data-bs-target="#galeria-grid" type="button" role="tab" aria-controls="galeria-grid" aria-selected="true">
+      <i class="fas fa-table-cells fa-sm"></i>
+    </button>
+  </li>
+
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="column-tab" data-bs-toggle="tab" data-bs-target="#galeria-columnas" type="button" role="tab" aria-controls="galeria-columnas" aria-selected="false">
+      <i class="fa-sharp fa-solid fa-square fa-sm"></i>
+    </button>
+  </li>
+</ul>
+
+
+<!-- Imagenes del post Fila de 3-->
+
+ <div class="tab-content">  
+<!-- ^^^ el de con clase tab-content es para ocultar la otra seccion de imagenes -->
+
+ 
+
+<div class="tab-pane fade show active" id="galeria-grid" role="tabpanel" aria-labelledby="grid-tab">
+
+<div class="container" style="max-width: 960px;"> 
+
+  <div class="row g-1">
+
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=1" class="img-fluid" alt="foto 1">
+    </div>
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=2" class="img-fluid" alt="foto 2">
+    </div>
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=3" class="img-fluid" alt="foto 3">
+    </div>
+
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=4" class="img-fluid" alt="foto 4">
+    </div>
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=5" class="img-fluid" alt="foto 5">
+    </div>
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=6" class="img-fluid" alt="foto 6">
+    </div>
+
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=7" class="img-fluid" alt="foto 7">
+    </div>
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=8" class="img-fluid" alt="foto 8">
+    </div>
+    <div class="col-4">
+      <img src="https://picsum.photos/300/300?random=9" class="img-fluid" alt="foto 9">
+    </div>
+    </div>
+</div>
+    </div>
+
+<!-- imagenes con descripcion -->
+
+<div class="tab-pane fade" id="galeria-columnas" role="tabpanel" aria-labelledby="column-tab">
+
+  <div class="container d-flex flex-column align-items-center">
+    
+    <!-- Publicación 1 -->
+    <div class="card mb-4" style="max-width: 500px; width: 100%;">
+
+      <div class="card-header d-flex align-items-center">
+        <img src="https://ui-avatars.com/api/?name=Carlos&background=black&color=fff" class="rounded-circle me-2" alt="usuario" width="40" height="40">
+
+        <strong>carlosalfredolg</strong>
+      </div>
+      
+      <img src="https://picsum.photos/600/400?random=19" class="card-img-top" alt="foto 1">
+      <div class="card-body">
+        <!-- Reacciones -->
+        <div class="d-flex justify-content-between mb-2">
+          <div>
+            <i class="fa-regular fa-heart me-3"><b>198</b></i>
+            <i class="fa-regular fa-comment me-3"><b>87</b></i>
+            <i class="fa-regular fa-paper-plane"><b>13</b></i>
+          </div>
+          <div>
+            <i class="fa-regular fa-bookmark"><b>6</b></i>
+          </div>
+        </div>
+        <!-- Texto -->
+         <p class="mb-0">les gusta a <b>4Geeksacademy</b>y otros</p>
+        <p class="mb-1"><strong>carlosalfredolg</strong> Esta es una descripción del post con <b>#hashtags</b> todo 🔥</p>
+        <p class="text-muted mb-0" style="font-size: 0.85rem;">Hace 1 hora</p>
+      </div>
+    </div>
+
+    <!-- segunda publicacion -->
+
+
+     <div class="card mb-4" style="max-width: 500px; width: 100%;">
+
+      <div class="card-header d-flex align-items-center">
+        <img src="https://ui-avatars.com/api/?name=Carlos&background=black&color=fff" class="rounded-circle me-2" alt="usuario" width="40" height="40">
+
+        <strong>carlosalfredolg</strong>
+      </div>
+      <img src="https://picsum.photos/600/400?random=20" class="card-img-top" alt="foto 1">
+      <div class="card-body">
+        <!-- Reacciones -->
+        <div class="d-flex justify-content-between mb-2">
+          <div>
+            <i class="fa-regular fa-heart me-3"><b>540</b></i>
+            <i class="fa-regular fa-comment me-3"><b>97</b></i>
+            <i class="fa-regular fa-paper-plane"><b>30</b></i>
+          </div>
+          <div>
+            <i class="fa-regular fa-bookmark"><b>10</b></i>
+          </div>
+        </div>
+        <!-- Texto -->
+         <p class="mb-0">les gusta a <b>4Geeksacademy</b>y otros</p>
+        <p class="mb-1"><strong>carlosalfredolg</strong> Esta es una descripción del post con otro <b>#hashtags</b></div></p>
+        <p class="text-muted mb-0" style="font-size: 0.85rem;">Hace 3 horas</p>
+
+      </div>
+
+    </div>
+
+
+    <!-- tercera publicacion -->
+
+    
+
+   
+
+    <!-- div de cierre principales V -->
+    </div>
+  </div>
+</div>
+    <!-- cierres -->
+
+     <!-- div del body abajo -->
+
+     <!-- link scrip de bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+
+  </body>
+</html>
